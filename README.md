@@ -8,3 +8,5 @@
 * The original competition
   * http://aichallenge.org/
 
+* Starter packages
+  * c++ - https://github.com/samadam/Tron-Cpp-Starter-Kit
