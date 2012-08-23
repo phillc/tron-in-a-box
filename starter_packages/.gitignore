@@ -1,0 +1,3 @@
+clojure/classes/*
+clojure/deps/*
+*.zip
