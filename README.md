@@ -11,3 +11,4 @@
 * Starter packages
   * c++ - https://github.com/samadam/Tron-Cpp-Starter-Kit
   * clojure - https://github.com/budu/google-ai-challenge-tron-bot
+  * haskell - https://github.com/mmikulicic/yahtron
