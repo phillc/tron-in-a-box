@@ -27,7 +27,7 @@ module StarterPackage
 
   class Clojure < Base
     def run_command
-      "clj #{package_path}/MyTronBot.clj"
+      "#{package_path}/run.sh"
     end
   end
 
@@ -84,7 +84,7 @@ module Engine
   class Java < Base
     def matchup bot1, bot2
       map = get_random_map
-      command = %Q{java -jar engine/java/Tron.jar #{map} "#{bot1.run_command}" "#{bot1.run_command}" 0}
+      command = %Q{java -jar engine/java/Tron.jar #{map} "#{bot1.run_command}" "#{bot2.run_command}" 0}
       puts command
       Kernel.exec command
     end
