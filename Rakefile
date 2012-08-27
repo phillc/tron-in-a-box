@@ -6,7 +6,7 @@ end
 
 module StarterPackage
   def self.all
-    [Clojure, Cpp, Haskell].map(&:new)
+    [Clojure, Cpp, Haskell, Ruby].map(&:new)
   end
 
   class Base < Bot
@@ -21,7 +21,7 @@ module StarterPackage
     protected
 
     def package_path
-      File.join(File.dirname(__FILE__), "starter_packages", "clojure")
+      File.join(File.dirname(__FILE__), "starter_packages", name)
     end
   end
 
@@ -35,6 +35,12 @@ module StarterPackage
   end
 
   class Haskell < Base
+  end
+
+  class Ruby < Base
+    def run_command
+      "ruby #{package_path}/MyTronBot.rb"
+    end
   end
 end
 
@@ -93,7 +99,7 @@ module Engine
   class Python < Base
     def matchup bot1, bot2
       map = get_random_map
-      command = %Q{./engine/python/round.py -vi "#{bot1.run_command}" "#{bot2.run_command}" --board-file=#{map}}
+      command = %Q{./engine/python/round.py -v "#{bot1.run_command}" "#{bot2.run_command}" --board-file=#{map}}
       puts command
       Kernel.exec command
     end
