@@ -32,6 +32,13 @@ module StarterPackage
   end
 
   class Cpp < Base
+    def compile
+      puts `cd #{package_path} && make`
+    end
+
+    def run_command
+      "#{package_path}/MyTronBot"
+    end
   end
 
   class Haskell < Base
