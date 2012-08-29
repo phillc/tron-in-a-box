@@ -42,6 +42,9 @@ module StarterPackage
   end
 
   class Haskell < Base
+    def run_command
+      "runghc #{package_path}/MyTronBot.hs"
+    end
   end
 
   class JavaScript < Base
