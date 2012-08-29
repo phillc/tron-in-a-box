@@ -6,7 +6,7 @@ end
 
 module StarterPackage
   def self.all
-    [Clojure, Cpp, Haskell, Ruby].map(&:new)
+    [Clojure, Cpp, Haskell, Ruby, JavaScript].map(&:new)
   end
 
   class Base < Bot
@@ -35,6 +35,12 @@ module StarterPackage
   end
 
   class Haskell < Base
+  end
+
+  class JavaScript < Base
+    def run_command
+      "node #{package_path}/MyTronBot.js"
+    end
   end
 
   class Ruby < Base
